@@ -1,10 +1,8 @@
 package com.asgm.kafka;
 
+import com.asgm.kafka.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/kafka")
@@ -21,5 +19,10 @@ public class KafkaProducerController {
     public void sendMessageToKafkaTopic(@RequestParam("message") String message)
     {
         this.producerService.sendMessage(message);
+    }
+
+    @PostMapping(value = "/user")
+    public void sendMessageToKafkaTopic(@RequestBody User user) {
+        this.producerService.sendMessage(user);
     }
 }
