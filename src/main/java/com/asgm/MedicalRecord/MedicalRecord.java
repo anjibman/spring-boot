@@ -1,4 +1,4 @@
-package com.example.springboot.MedicalRecord;
+package com.asgm.MedicalRecord;
 
 public class MedicalRecord {
     private String id;

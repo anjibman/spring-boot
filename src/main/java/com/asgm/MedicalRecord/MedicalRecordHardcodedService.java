@@ -1,4 +1,4 @@
-package com.example.springboot.MedicalRecord;
+package com.asgm.MedicalRecord;
 
 import com.github.javafaker.Faker;
 import org.springframework.stereotype.Service;
