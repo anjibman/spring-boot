@@ -17,7 +17,10 @@ public class KafKaProducerService {
     private String topic;
 
     @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
+    private KafkaTemplate<String, String> kafkaTemplate;
+
+    @Autowired
+    private KafkaTemplate<String, User> userKafkaTemplate;
 
     public void sendMessage(String message)
     {
@@ -28,6 +31,6 @@ public class KafKaProducerService {
     public void sendMessage(User user)
     {
         logger.info(String.format("Message sent -> %s", user.toString()));
-        this.kafkaTemplate.send(topic, user);
+        this.userKafkaTemplate.send(topic, user);
     }
 }
